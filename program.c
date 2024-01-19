@@ -35,9 +35,25 @@ void menuObjetosciWalca() {
 
     printf("Objetosc walca wynosi %f", obliczObjetoscWalca(r, h));
 }
+void menu() {
+    int wybor;
+    printf("Wybierz bryle do obliczenia\n1. Prostopadloscian\n2. Walec\n");
+    scanf("%d", &wybor);
+    switch(wybor) {
+        case 1:
+            menuObjetosciProstopadloscianu();
+            break;
+        case 2:
+            menuObjetosciWalca();
+            break;
+        default:
+            printf("Wybierz poprawn¹ liczbê!\n");
+            menu();
+            break;
+    }
+}
 
 int main() {
-    menuObjetosciProstopadloscianu();
-    menuObjetosciWalca();
+    menu();
     return 0;
 }
